@@ -1,0 +1,51 @@
+{
+  "name": "mirocli",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A lightweight and secure tool to interact with Miro API",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "davitp",
+    "url": "https://github.com/davitp"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "index.tss",
+  "exports": "./dist/index.js",
+  "bin": "./dist/index.js",
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.32.1",
+    "@mirohq/miro-api": "^2.2.2",
+    "archiver": "^7.0.1",
+    "axios": "^1.7.9",
+    "chalk": "^5.4.1",
+    "commander": "^12.1.0",
+    "date-fns": "^4.1.0",
+    "figlet": "^1.8.0",
+    "jose": "^5.9.6",
+    "keytar": "^7.9.0",
+    "net": "^1.0.2",
+    "open": "^10.1.0",
+    "ora": "^8.1.1",
+    "prompts": "^2.4.2",
+    "table": "^6.9.0",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.3",
+    "@types/figlet": "^1.7.0",
+    "@types/node": "^22.10.5",
+    "@types/prompts": "^2.4.9",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3"
+  }
+}
