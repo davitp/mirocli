@@ -2,6 +2,7 @@
   "name": "mirocli",
   "version": "0.0.0-development",
   "type": "module",
+  "private": false,
   "description": "A lightweight and secure tool to interact with Miro API",
   "publishConfig": {
     "access": "public"
@@ -11,6 +12,14 @@
     "name": "davitp",
     "url": "https://github.com/davitp"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davitp/mirocli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davitp/mirocli/issues"
+  },
+  "homepage": "https://github.com/davitp/mirocli#readme",
   "files": [
     "dist"
   ],
@@ -19,7 +28,8 @@
   "bin": "./dist/index.js",
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup"
+    "build": "tsup",
+    "semantic-release": "semantic-release"
   },
   "keywords": [],
   "dependencies": {
@@ -41,10 +51,17 @@
     "yaml": "^2.7.0"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
     "@types/archiver": "^6.0.3",
     "@types/figlet": "^1.7.0",
     "@types/node": "^22.10.7",
     "@types/prompts": "^2.4.9",
+    "semantic-release": "^24.2.1",
     "tsup": "^8.3.5",
     "typescript": "^5.7.3"
   }
