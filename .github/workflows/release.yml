@@ -62,7 +62,7 @@ jobs:
       - name: Update package.json with version
         if: env.SKIP_RELEASE == 'false'
         run: |
-          jq '.version = env.NEXT_VERSION' package.json > temp.json && mv temp.json package.json
+          jq --arg version "$NEXT_VERSION" '.version = $version' package.json > temp.json && mv temp.json package.json
         env:
           NEXT_VERSION: ${{ env.NEXT_VERSION }}
 
