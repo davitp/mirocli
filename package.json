@@ -4,6 +4,7 @@
   "type": "module",
   "private": false,
   "description": "A lightweight and secure tool to interact with Miro API",
+  "packageManager": "pnpm@9.15.4",
   "publishConfig": {
     "access": "public"
   },
