@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/davitp/mirocli/compare/v1.0.2...v1.0.3) (2025-01-17)
+
+
+### Bug Fixes
+
+* ensure running on node ([26ec25f](https://github.com/davitp/mirocli/commit/26ec25fdf6cdbc8626b072aa1145302c1d417a6d))
+
 ## [1.0.2](https://github.com/davitp/mirocli/compare/v1.0.1...v1.0.2) (2025-01-17)
 
 
