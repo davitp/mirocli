@@ -1,6 +1,6 @@
 {
   "name": "mirocli",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "type": "module",
   "description": "A lightweight and secure tool to interact with Miro API",
   "publishConfig": {
