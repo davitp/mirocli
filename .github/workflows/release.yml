@@ -31,18 +31,23 @@ jobs:
       - name: Extract Next Version
         id: version
         run: |
-          NEXT_VERSION=$(npx semantic-release --dry-run --no-ci || true | grep 'nextRelease:' | grep -oP '(?<=version: )[^,}]+')
+          NEXT_VERSION=$(npx semantic-release --dry-run --no-ci 2>/dev/null | grep 'nextRelease:' | grep -oP '(?<=version: )[^,}]+')
           if [ -z "$NEXT_VERSION" ]; then
             echo "No new version to release. Skipping release."
             echo "SKIP_RELEASE=true" >> $GITHUB_ENV
           else
-            echo "NEXT_VERSION=${NEXT_VERSION}" >> $GITHUB_ENV
+            echo "NEXT_VERSION=$NEXT_VERSION" >> $GITHUB_ENV
             echo "SKIP_RELEASE=false" >> $GITHUB_ENV
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: See extracted version
+        run: |
+          echo "NEXT_VERSION=${{ env.NEXT_VERSION }}"
+          echo "SKIP_RELEASE=${{ env.SKIP_RELEASE }}" 
+     
       - name: Update package.json with version
         if: env.SKIP_RELEASE == 'false'
         run: |
