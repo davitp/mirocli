@@ -28,6 +28,14 @@ jobs:
       - name: Install jq
         uses: dcarbone/install-jq-action@v3.0.1
 
+      - name: Dry run
+        id: dry-run
+        run: |
+          npx semantic-release --dry-run --no-ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
       - name: Extract Next Version
         id: version
         run: |
