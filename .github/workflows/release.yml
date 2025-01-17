@@ -40,8 +40,8 @@ jobs:
         id: version
         run: |
           set -e
-          # Run semantic-release dry-run and capture version if available
-          NEXT_VERSION=$(npx semantic-release --dry-run --no-ci 2>/dev/null | grep -oP '\d+\.\d+\.\d+' | head -n 1 || true)
+          # Run semantic-release dry-run and capture version if available after the specific phrase
+          NEXT_VERSION=$(npx semantic-release --dry-run --no-ci 2>/dev/null | grep -oP '(?<=The next release version is )\d+(\.\d+){2,}' || true)
           if [ -z "$NEXT_VERSION" ]; then
             echo "No new version to release. Skipping release."
             echo "SKIP_RELEASE=true" >> $GITHUB_ENV
