@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import program from './commands';
 import { logger } from './services/logger';
 import { startup } from './services/startup';
