@@ -25,6 +25,21 @@ jobs:
       - name: Install Dependencies
         run: pnpm i
 
+      - name: Install jq
+        uses: dcarbone/install-jq-action@v3.0.1
+
+      - name: Extract Next Version
+        id: version
+        run: |
+          NEXT_VERSION=$(npx semantic-release --dry-run | grep 'nextRelease:' | grep -oP '(?<=version: )[^,}]+')
+          echo "NEXT_VERSION=${NEXT_VERSION}" >> $GITHUB_ENV
+
+      - name: Update package.json with version
+        run: |
+          jq '.version = "$NEXT_VERSION"' package.json > temp.json && mv temp.json package.json
+        env:
+          NEXT_VERSION: ${{ env.NEXT_VERSION }}
+
       - name: Build
         run: pnpm build
 
