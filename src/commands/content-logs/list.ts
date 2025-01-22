@@ -43,16 +43,15 @@ contentLogsListCommand
             return
         }
 
-        const header = ['Id', 'Board', 'Actor', 'Actor Email', 'Item Id', 'Item Type'];
+        const header = ['Content Id', 'Action', 'Actor', 'Item', 'Time'];
         const rows = [header];
 
         result.body.data?.forEach(item => rows.push([
-            item.id ?? '',
-            item.boardKey ?? '',
-            `${item.createdBy?.firstName} ${item.createdBy?.lastName}`,
-            item.createdBy?.email ?? '',
-            item.itemId ?? '',
-            item.type ?? ''
+            item.contentId ?? '',
+            item.actionType ?? '',
+            `${item.actor?.name} (${item.actor?.email})`,
+            `${item.itemId} (${item.itemType})`,
+            item.actionTime?.toLocaleString("en-GB") ?? ''
         ]))
 
         logger.just(table(rows, { 

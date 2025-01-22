@@ -12,8 +12,8 @@ importers:
         specifier: ^1.33.0
         version: 1.33.0
       '@mirohq/miro-api':
-        specifier: ^2.2.2
-        version: 2.2.2
+        specifier: ^2.2.3
+        version: 2.2.3
       archiver:
         specifier: ^7.0.1
         version: 7.0.1
@@ -293,8 +293,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@mirohq/miro-api@2.2.2':
-    resolution: {integrity: sha512-KoBjjMv8rXXSQtvAamT1YQ94vZ+Lofw/Gp4hvHYHzlHtc4A3UHkUl6vgBh2O+eHf5j/sUCJ+xe7JbQsyHoZVng==}
+  '@mirohq/miro-api@2.2.3':
+    resolution: {integrity: sha512-uoKrdclIUF3S5LJDXIyc6ICijESPPQt3bRu0QeaXxbQp/TjHNRJLKtGocOEyZzDAq37NHNJRXeiqMCdhHK3q7w==}
 
   '@noble/ciphers@1.2.0':
     resolution: {integrity: sha512-YGdEUzYEd+82jeaVbSKKVp1jFZb8LwaNMIIzHFkihGvYdd/KKAr7KaJHdEdSYGredE3ssSravXIa0Jxg28Sv5w==}
@@ -2379,7 +2379,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@mirohq/miro-api@2.2.2':
+  '@mirohq/miro-api@2.2.3':
     dependencies:
       form-data: 4.0.1
       node-fetch: 2.7.0
