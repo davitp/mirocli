@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/davitp/mirocli/compare/v1.0.3...v1.0.4) (2025-01-22)
+
+
+### Bug Fixes
+
+* **cl:** Use new payload of content logs ([dd5d64b](https://github.com/davitp/mirocli/commit/dd5d64ba29a0c591ee8c1c52adc8aa733df04651))
+
 ## [1.0.3](https://github.com/davitp/mirocli/compare/v1.0.2...v1.0.3) (2025-01-17)
 
 
