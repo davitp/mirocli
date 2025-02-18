@@ -1,3 +1,12 @@
+## [1.0.5](https://github.com/davitp/mirocli/compare/v1.0.4...v1.0.5) (2025-02-18)
+
+
+### Bug Fixes
+
+* **audit:** added sorting and iterating to audit logs command ([b35da9c](https://github.com/davitp/mirocli/commit/b35da9c0f657765411da6447cbe02ad0e7fef1d7))
+* **boards:** extended content logs filters, boards filter and org view ([1b6e9eb](https://github.com/davitp/mirocli/commit/1b6e9ebdb30e0647b783059070a5e481f9606964))
+* **deps:** bump versions ([d9d04f2](https://github.com/davitp/mirocli/commit/d9d04f20af0a4e0fcca6046d5465bd8e80b6f544))
+
 ## [1.0.4](https://github.com/davitp/mirocli/compare/v1.0.3...v1.0.4) (2025-01-22)
 
 
