@@ -8,6 +8,7 @@ import { parseDateTime } from "@/services/date-time-parser";
 import { subDays } from "date-fns";
 import { table } from "table";
 import { ellipsis } from "@/services/text-utils";
+import chalk from "chalk";
 
 const auditLogsListCommand = createCommand('list')
 
@@ -15,7 +16,9 @@ auditLogsListCommand
     .description('List audit logs in the organization according to the filter')
     .option('-f, --from <date>', 'The start time of the logs')
     .option('-t, --to <date>', 'The end time of the logs')
-    .option('--emails <text...>', 'Email addresses to filter')
+    .option('--limit <number>', 'The number of requested items', '1')
+    .option('--cursor <string>', 'The cursor to continue iterating', '')
+    .option('--asc', 'Sort in ascending order')
     .option('--json', 'Show the result in raw json')
     .action(asyncHandler(async (options, cmd) => {
 
@@ -26,19 +29,30 @@ auditLogsListCommand
 
         const from = options.from ? parseDateTime(options.from) : subDays(now, 1);
         const to = options.to ? parseDateTime(options.to, now) : now;
-
+        const limit = options.limit ?? 10;
+        const cursor = options.cursor ? options.cursor : undefined;
+        const sorting = options.asc ? 'ASC' : 'DESC';
+        
         const miroApi = getMiroApi(context, authContext);
         
         const result = await miroGuard(() => miroApi.enterpriseGetAuditLogs(
             from.toISOString(),
             to.toISOString(),
             {
-                limit: 10
+                limit,
+                cursor,
+                sorting
             }
         ))
-    
+
+        const keepGoing = result.body.cursor && result.body.size === result.body.limit;
+        const cursorMessage = `To continue iterating just append ${chalk.bold(`--cursor '${result.body.cursor}'`)} to you command`
+
+        const iterate = () => keepGoing ? logger.info(`\n${cursorMessage}`) : false;
+
         if(options.json){
             logger.just(JSON.stringify(result.body.data, null, 4))
+            iterate()
             return
         }
 
@@ -58,6 +72,9 @@ auditLogsListCommand
             drawHorizontalLine: () => false, 
             drawVerticalLine: () => false 
         }));
+
+        iterate()
+
     }));
 
 export default auditLogsListCommand;
