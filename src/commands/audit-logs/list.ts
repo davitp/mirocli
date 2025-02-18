@@ -16,7 +16,7 @@ auditLogsListCommand
     .description('List audit logs in the organization according to the filter')
     .option('-f, --from <date>', 'The start time of the logs')
     .option('-t, --to <date>', 'The end time of the logs')
-    .option('--limit <number>', 'The number of requested items', '1')
+    .option('--limit <number>', 'The number of requested items', '10')
     .option('--cursor <string>', 'The cursor to continue iterating', '')
     .option('--asc', 'Sort in ascending order')
     .option('--json', 'Show the result in raw json')
@@ -27,7 +27,7 @@ auditLogsListCommand
 
         const now = new Date();
 
-        const from = options.from ? parseDateTime(options.from) : subDays(now, 1);
+        const from = options.from ? parseDateTime(options.from) : subDays(now, 7);
         const to = options.to ? parseDateTime(options.to, now) : now;
         const limit = options.limit ?? 10;
         const cursor = options.cursor ? options.cursor : undefined;
