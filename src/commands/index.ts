@@ -7,6 +7,7 @@ import teamsCommand from './teams';
 import contentLogsCommand from './content-logs';
 import auditLogsCommand from './audit-logs';
 import boardsCommand from './boards';
+import boardExportCommand from './board-export';
 
 const program = createCommand();
 
@@ -24,6 +25,7 @@ program.addCommand(teamsCommand);
 program.addCommand(contentLogsCommand);
 program.addCommand(auditLogsCommand);
 program.addCommand(boardsCommand);
+program.addCommand(boardExportCommand);
 
 export default program;
 

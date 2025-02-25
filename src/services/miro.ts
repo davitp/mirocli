@@ -25,7 +25,7 @@ export async function miroGuard<T>(fn: () => Promise<T>): Promise<T> {
     }
     catch(error: any){
         if(error.body !== undefined && error.statusCode !== undefined){
-            throw new MiroApiError(`The request failed with code ${error.statusCode}. Response: \n ${JSON.stringify(error.body, null, 2)}`, error.body, error.statusCode);
+            throw new MiroApiError(`The request failed with code ${error.statusCode}. Message: ${error.body?.message}`, error.body, error.statusCode);
         }
 
         throw error;
