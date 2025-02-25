@@ -1,3 +1,11 @@
+## [1.0.6](https://github.com/davitp/mirocli/compare/v1.0.5...v1.0.6) (2025-02-25)
+
+
+### Bug Fixes
+
+* **board-export:** added board export commands ([ceae45b](https://github.com/davitp/mirocli/commit/ceae45bd99f1b590bd1b9fa4c32d8cda65ac41f8))
+* **deps:** bump dependency versions ([74dc647](https://github.com/davitp/mirocli/commit/74dc647995069408471f89caa907d4d383b622ba))
+
 ## [1.0.5](https://github.com/davitp/mirocli/compare/v1.0.4...v1.0.5) (2025-02-18)
 
 
