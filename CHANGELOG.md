@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/davitp/mirocli/compare/v1.0.6...v1.0.7) (2025-12-05)
+
+
+### Bug Fixes
+
+* **deps:** bump versions ([db60302](https://github.com/davitp/mirocli/commit/db60302790c94b832b759d1b25082e10bee239ad))
+
 ## [1.0.6](https://github.com/davitp/mirocli/compare/v1.0.5...v1.0.6) (2025-02-25)
 
 
