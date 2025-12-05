@@ -59,7 +59,6 @@ export async function getAuthenticatedContext(context: ResolvedMiroContext): Pro
     }
     catch(error: any){
         await deleteSession(context.name)
-        console.log(error)
         throw Error(`Error while refreshing the access token: ${error.message ?? 'Unknown Error'}`)
     }
     
